@@ -1,3 +1,6 @@
+## 4.0.0+1
+- Fixing ios Class and podspec name
+
 ## 4.0.0
 - Added pull request from wwwdata [github](https://github.com/pichillilorenzo/flutter_inappwebview/pull/295)
 - Changin name flutter_inappwebview to flutter_polywebview
