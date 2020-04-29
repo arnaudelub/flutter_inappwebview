@@ -15,8 +15,8 @@
  under the License.
  */
 
-#import "InAppWebViewFlutterPlugin.h"
-#import <flutter_inappwebview/flutter_inappwebview-Swift.h>
+#import "PolyWebViewFlutterPlugin.h"
+#import <flutter_polywebview/flutter_inappwebview-Swift.h>
 
 @implementation InAppWebViewFlutterPlugin : NSObject
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {

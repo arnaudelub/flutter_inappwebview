@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=/opt/flutter"
-export "FLUTTER_APPLICATION_PATH=/home/badtaste/mobile-dev/flutter/plugins/remake/flutter_polywebview/example"
+export "FLUTTER_APPLICATION_PATH=/home/badtaste/Repository/Flutter/flutter_polywebview/example"
 export "FLUTTER_TARGET=lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "SYMROOT=${SOURCE_ROOT}/../build/ios"
