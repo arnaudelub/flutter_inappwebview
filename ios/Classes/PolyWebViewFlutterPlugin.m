@@ -16,7 +16,7 @@
  */
 
 #import "PolyWebViewFlutterPlugin.h"
-#import <flutter_polywebview/flutter_inappwebview-Swift.h>
+#import <flutter_polywebview/flutter_polywebview-Swift.h>
 
 @implementation PolyWebViewFlutterPlugin : NSObject
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {

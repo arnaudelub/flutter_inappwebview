@@ -307,6 +307,6 @@ public class JavaScriptBridgeInterface {
   }
 
   private MethodChannel getChannel() {
-    return (inAppBrowserActivity != null) ? InAppWebViewFlutterPlugin.inAppBrowser.channel : flutterWebView.channel;
+    return (inAppBrowserActivity != null) ? PolyWebViewFlutterPlugin.inAppBrowser.channel : flutterWebView.channel;
   }
 }

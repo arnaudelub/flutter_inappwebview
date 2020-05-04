@@ -22,7 +22,7 @@ dependencies:
 flutter:
   plugin:
     androidPackage: com.pichillilorenzo.flutter_inappwebview
-    pluginClass: InAppWebViewFlutterPlugin
+    pluginClass: PolyWebViewFlutterPlugin
 
   assets:
     - packages/flutter_polywebview/t_rex_runner/t-rex.html
@@ -37,7 +37,6 @@ flutter:
   #
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
-
   # To add custom fonts to your plugin package, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

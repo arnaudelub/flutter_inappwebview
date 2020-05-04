@@ -72,7 +72,7 @@ public class InAppBrowserActivity extends AppCompatActivity {
     webViewOptions.parse(optionsMap);
     webView.options = webViewOptions;
 
-    InAppWebViewFlutterPlugin.inAppBrowser.webViewActivities.put(uuid, this);
+    PolyWebViewFlutterPlugin.inAppBrowser.webViewActivities.put(uuid, this);
 
     actionBar = getSupportActionBar();
 
@@ -95,7 +95,7 @@ public class InAppBrowserActivity extends AppCompatActivity {
 
     Map<String, Object> obj = new HashMap<>();
     obj.put("uuid", uuid);
-    InAppWebViewFlutterPlugin.inAppBrowser.channel.invokeMethod("onBrowserCreated", obj);
+    PolyWebViewFlutterPlugin.inAppBrowser.channel.invokeMethod("onBrowserCreated", obj);
 
   }
 
@@ -259,7 +259,7 @@ public class InAppBrowserActivity extends AppCompatActivity {
       if (canGoBack())
         goBack();
       else if (options.closeOnCannotGoBack)
-        InAppWebViewFlutterPlugin.inAppBrowser.close(this, uuid, null);
+        PolyWebViewFlutterPlugin.inAppBrowser.close(this, uuid, null);
       return true;
     }
     return super.onKeyDown(keyCode, event);
@@ -358,7 +358,7 @@ public class InAppBrowserActivity extends AppCompatActivity {
   }
 
   public void closeButtonClicked(MenuItem item) {
-    InAppWebViewFlutterPlugin.inAppBrowser.close(this, uuid, null);
+    PolyWebViewFlutterPlugin.inAppBrowser.close(this, uuid, null);
   }
 
   public byte[] takeScreenshot() {

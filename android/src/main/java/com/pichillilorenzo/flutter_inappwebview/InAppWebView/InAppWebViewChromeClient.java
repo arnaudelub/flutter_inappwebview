@@ -30,10 +30,9 @@ import androidx.appcompat.app.AlertDialog;
 
 import com.pichillilorenzo.flutter_inappwebview.FlutterWebView;
 import com.pichillilorenzo.flutter_inappwebview.InAppBrowserActivity;
-import com.pichillilorenzo.flutter_inappwebview.InAppWebViewFlutterPlugin;
+import com.pichillilorenzo.flutter_inappwebview.PolyWebViewFlutterPlugin;
 import com.pichillilorenzo.flutter_inappwebview.R;
 import com.pichillilorenzo.flutter_inappwebview.Shared;
-import com.pichillilorenzo.flutter_inappwebview.Util;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -571,7 +570,7 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
 
   //For Android 5.0+
   public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> filePathCallback, FileChooserParams fileChooserParams) {
-    InAppWebViewFlutterPlugin.uploadMessageArray = filePathCallback;
+    PolyWebViewFlutterPlugin.uploadMessageArray = filePathCallback;
     try {
       Intent contentSelectionIntent = new Intent(Intent.ACTION_GET_CONTENT);
       contentSelectionIntent.addCategory(Intent.CATEGORY_OPENABLE);
@@ -595,7 +594,7 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
   @Override
   public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
     if (requestCode == FILECHOOSER_RESULTCODE && (resultCode == RESULT_OK || resultCode == RESULT_CANCELED)) {
-      InAppWebViewFlutterPlugin.uploadMessageArray.onReceiveValue(WebChromeClient.FileChooserParams.parseResult(resultCode, data));
+      PolyWebViewFlutterPlugin.uploadMessageArray.onReceiveValue(WebChromeClient.FileChooserParams.parseResult(resultCode, data));
     }
     return true;
   }
@@ -648,6 +647,6 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
   }
 
   private MethodChannel getChannel() {
-    return (inAppBrowserActivity != null) ? InAppWebViewFlutterPlugin.inAppBrowser.channel : flutterWebView.channel;
+    return (inAppBrowserActivity != null) ? PolyWebViewFlutterPlugin.inAppBrowser.channel : flutterWebView.channel;
   }
 }

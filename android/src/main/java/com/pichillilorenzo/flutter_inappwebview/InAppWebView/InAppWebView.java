@@ -35,7 +35,7 @@ import com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerHan
 import com.pichillilorenzo.flutter_inappwebview.ContentBlocker.ContentBlockerTrigger;
 import com.pichillilorenzo.flutter_inappwebview.FlutterWebView;
 import com.pichillilorenzo.flutter_inappwebview.InAppBrowserActivity;
-import com.pichillilorenzo.flutter_inappwebview.InAppWebViewFlutterPlugin;
+import com.pichillilorenzo.flutter_inappwebview.PolyWebViewFlutterPlugin;
 import com.pichillilorenzo.flutter_inappwebview.JavaScriptBridgeInterface;
 import com.pichillilorenzo.flutter_inappwebview.R;
 import com.pichillilorenzo.flutter_inappwebview.Shared;
@@ -1268,7 +1268,7 @@ final public class InAppWebView extends InputAwareWebView {
   }
 
   private MethodChannel getChannel() {
-    return (inAppBrowserActivity != null) ? InAppWebViewFlutterPlugin.inAppBrowser.channel : flutterWebView.channel;
+    return (inAppBrowserActivity != null) ? PolyWebViewFlutterPlugin.inAppBrowser.channel : flutterWebView.channel;
   }
 
   public void startSafeBrowsing(final MethodChannel.Result result) {
