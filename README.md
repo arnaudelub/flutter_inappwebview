@@ -1,3 +1,7 @@
+# IMPORT INFO
+This is just fork of pichillilorenzo/flutter_inappwebview plugin. Apparently it's not maintained anymore, or at least at the moment. So we will maintain this one until pichillilorenzo came back and if  so, we will merge the diff to the original plugin
+This package can be found here on pub => [![Pub Version](https://img.shields.io/pub/v/flutter_polywebview)](https://pub.dev/packages/flutter_polywebview)
+
 # Flutter PolyWebview Plugin [![Share on Twitter](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Flutter%20InAppBrowser%20plugin!&url=https://github.com/pichillilorenzo/flutter_inappwebview&hashtags=flutter,flutterio,dart,dartlang,webview) [![Share on Facebook](https://img.shields.io/badge/share-facebook-blue.svg?longCache=true&style=flat&colorB=%234267b2)](https://www.facebook.com/sharer/sharer.php?u=https%3A//github.com/pichillilorenzo/flutter_inappwebview)
 
 [![Pub](https://img.shields.io/pub/v/flutter_inappwebview.svg)](https://pub.dartlang.org/packages/flutter_inappwebview)
@@ -22,7 +26,7 @@ If you are starting a new fresh app, you need to create the Flutter App with `fl
 
 During the build, if Android fails with `Error: uses-sdk:minSdkVersion 16 cannot be smaller than version 17 declared in library`, it means that you need to update the `minSdkVersion` of your `android/app/build.gradle` file to at least `17`.
 
-Also, you need to add `<uses-permission android:name="android.permission.INTERNET"/>` in the `android/app/src/main/AndroidManifest.xml` file in order to give minimum permission to perform network operations in your application. 
+Also, you need to add `<uses-permission android:name="android.permission.INTERNET"/>` in the `android/app/src/main/AndroidManifest.xml` file in order to give minimum permission to perform network operations in your application.
 
 Because of [Flutter AndroidX compatibility](https://flutter.dev/docs/development/packages-and-plugins/androidx-compatibility), the latest version that doesn't use `AndroidX` is `0.6.0`.
 
@@ -79,9 +83,9 @@ Classes:
 
 See the online [API Reference](https://pub.dartlang.org/documentation/flutter_inappwebview/latest/) to get the full documentation.
 
-The API showed in this `README.md` file shows only a part of the documentation that conforms to the master branch only. 
+The API showed in this `README.md` file shows only a part of the documentation that conforms to the master branch only.
 So, here you could have methods, options, and events that aren't published yet.
-If you need a specific version, change the **GitHub branch** to your version or use the **online API Reference** (recommended).  
+If you need a specific version, change the **GitHub branch** to your version or use the **online API Reference** (recommended).
 
 ### Load a file inside `assets` folder
 
@@ -451,7 +455,7 @@ Instead, on the `onLoadStop` WebView event, you can use `callHandler` directly:
 
 #### `InAppWebView` Events
 
-Event names that starts with `android` or `ios` are events platform-specific.  
+Event names that starts with `android` or `ios` are events platform-specific.
 
 * `onWebViewCreated`: Event fired when the InAppWebView is created.
 * `onLoadStart`: Event fired when the InAppWebView starts to load an url.
@@ -558,7 +562,7 @@ void main() => runApp(new MyApp());
 
 class MyApp extends StatefulWidget {
   final MyInAppBrowser browser = new MyInAppBrowser();
-  
+
   @override
   _MyAppState createState() => new _MyAppState();
 }
@@ -617,7 +621,7 @@ Screenshots:
 
 #### `InAppBrowser` options
 
-They are the same of the `InAppWebView` class. 
+They are the same of the `InAppWebView` class.
 Specific options of the `InAppBrowser` class are:
 
 ##### `InAppBrowser` Cross-platform options
@@ -647,7 +651,7 @@ Specific options of the `InAppBrowser` class are:
 
 #### `InAppBrowser` Events
 
-They are the same of the `InAppWebView` class, except for `InAppWebView.onWebViewCreated` event. 
+They are the same of the `InAppWebView` class, except for `InAppWebView.onWebViewCreated` event.
 Specific events of the `InAppBrowser` class are:
 
 * `onBrowserCreated`: Event fired when the `InAppBrowser` is created.
@@ -689,7 +693,7 @@ class MyInAppBrowser extends InAppBrowser {
 }
 
 class MyChromeSafariBrowser extends ChromeSafariBrowser {
-  
+
   MyChromeSafariBrowser(browserFallback) : super(bFallback: browserFallback);
 
   @override
@@ -712,7 +716,7 @@ void main() => runApp(new MyApp());
 
 class MyApp extends StatefulWidget {
   final ChromeSafariBrowser browser = new MyChromeSafariBrowser(new MyInAppBrowser());
-  
+
   @override
   _MyAppState createState() => new _MyAppState();
 }
@@ -826,13 +830,13 @@ Future main() async {
                       )
                   ),
                   onWebViewCreated: (InAppWebViewController controller) {
-  
+
                   },
                   onLoadStart: (InAppWebViewController controller, String url) {
-  
+
                   },
                   onLoadStop: (InAppWebViewController controller, String url) {
-  
+
                   },
                 ),
               ),
@@ -888,7 +892,7 @@ On Android, this class has a custom implementation using `android.database.sqlit
 
 This class implements a singleton object (shared instance) which manages the web storage used by WebView instances.
 
-On Android, it is implemented using [WebStorage](https://developer.android.com/reference/android/webkit/WebStorage.html). 
+On Android, it is implemented using [WebStorage](https://developer.android.com/reference/android/webkit/WebStorage.html).
 On iOS, it is implemented using [WKWebsiteDataStore.default()](https://developer.apple.com/documentation/webkit/wkwebsitedatastore)
 
 **NOTE for iOS**: available from iOS 9.0+.

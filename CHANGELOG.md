@@ -1,3 +1,6 @@
+## 4.0.0+2
+Fixing ios build
+
 ## 4.0.0+1
 - Fixing ios Class and podspec name
 
