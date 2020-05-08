@@ -47,15 +47,21 @@ class _InAppWebViewExampleScreenState extends State<InAppWebViewExampleScreen> {
               decoration:
                   BoxDecoration(border: Border.all(color: Colors.blueAccent)),
               child: InAppWebView(
-                initialUrl: "https://flutter.dev/",
+                initialUrl: "https://flutter.dev",
                 //initialFile: "assets/index.html",
                 initialHeaders: {},
                 initialOptions: InAppWebViewWidgetOptions(
+                    android: AndroidInAppWebViewOptions(
+                      builtInZoomControls: true,
+                      //  displayZoomControls: true,
+                    ),
                     crossPlatform: InAppWebViewOptions(
-                  debuggingEnabled: true,
-                )),
-                onWebViewCreated: (InAppWebViewController controller) {
+                      debuggingEnabled: true,
+                    )),
+                onWebViewCreated: (InAppWebViewController controller) async {
                   webView = controller;
+                  final double scale = await controller.getScale();
+                  print("Scale is $scale");
                 },
                 onLoadStart: (InAppWebViewController controller, String url) {
                   print("onLoadStart $url");

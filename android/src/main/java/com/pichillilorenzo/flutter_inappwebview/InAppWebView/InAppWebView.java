@@ -1,5 +1,6 @@
 package com.pichillilorenzo.flutter_inappwebview.InAppWebView;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -541,6 +542,7 @@ final public class InAppWebView extends InputAwareWebView {
     super.reload();
   }
 
+  @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
   public void prepare() {
 
     boolean isFromInAppBrowserActivity = inAppBrowserActivity != null;
@@ -657,7 +659,7 @@ final public class InAppWebView extends InputAwareWebView {
           break;
         case MOBILE:
         case RECOMMENDED:
-          setDesktopMode(false);
+          setDesktopMode(options.builtInZoomControls);
           break;
       }
     }
@@ -695,7 +697,7 @@ final public class InAppWebView extends InputAwareWebView {
 
     setVerticalScrollBarEnabled(!options.disableVerticalScroll);
     setHorizontalScrollBarEnabled(!options.disableHorizontalScroll);
-    setOnTouchListener(new View.OnTouchListener() {
+    /*setOnTouchListener(new View.OnTouchListener() {
       float m_downX;
       float m_downY;
 
@@ -735,7 +737,7 @@ final public class InAppWebView extends InputAwareWebView {
         }
         return false;
       }
-    });
+    });*/
   }
 
   public void setIncognito(boolean enabled) {
