@@ -1,3 +1,6 @@
+## 4.0.1
+Workaround to make the zoom work on Android, setting desktopMode to true when builtInZoomControls is set to true
+
 ## 4.0.0+2
 Fixing ios build
 
@@ -33,7 +36,7 @@ Fixing ios build
 
 ### BREAKING CHANGES
 
-- Updated `shouldOverrideUrlLoading` event: 
+- Updated `shouldOverrideUrlLoading` event:
   - the `url` parameter has been moved inside an instance of `ShouldOverrideUrlLoadingRequest` class
   - it has a return type `ShouldOverrideUrlLoadingAction` to allow or cancel navigation instead of cancel every time the request
 - Renamed `onTargetBlank` to `onCreateWindow`
@@ -41,8 +44,8 @@ Fixing ios build
 - Making methods available only for the specific platform more explicit: moved all the webview's controller methods for Android inside `controller.android` and all the webview's controller methods for iOS inside `controller.ios`
 - Making events available only for the specific platform more explicit:
   - Renamed `onSafeBrowsingHit` to `androidOnSafeBrowsingHit`
-  - Renamed `onGeolocationPermissionsShowPrompt` to `androidOnGeolocationPermissionsShowPrompt` 
-  - Renamed `onPermissionRequest` to `androidOnPermissionRequest`  
+  - Renamed `onGeolocationPermissionsShowPrompt` to `androidOnGeolocationPermissionsShowPrompt`
+  - Renamed `onPermissionRequest` to `androidOnPermissionRequest`
 - Updated attribute names for `InAppWebViewWidgetOptions`, `InAppBrowserClassOptions` and `ChromeSafariBrowserClassOptions` classes
 - Renamed and updated `onNavigationStateChange` to `onUpdateVisitedHistory`
 - Renamed all iOS options prefix from `Ios` to `IOS`
@@ -96,10 +99,10 @@ Fixing ios build
 - Added `clearCache`, `scrollTo`, `scrollBy`, `getHtml`, `injectJavascriptFileFromAsset` and `injectCSSFileFromAsset` methods method
 - Added `HttpAuthCredentialDatabase` class
 - Added `onReceivedServerTrustAuthRequest` and `onReceivedClientCertRequest` events to manage SSL requests
-- Added `onFindResultReceived` event, `findAllAsync`, `findNext` and `clearMatches` methods 
+- Added `onFindResultReceived` event, `findAllAsync`, `findNext` and `clearMatches` methods
 - Added `shouldInterceptAjaxRequest`, `onAjaxReadyStateChange`, `onAjaxProgress` and `shouldInterceptFetchRequest` events with `useShouldInterceptAjaxRequest` and `useShouldInterceptFetchRequest` webview options
 - Added `onNavigationStateChange` and `onLoadHttpError` events
-- Fun: added `getTRexRunnerHtml` and `getTRexRunnerCss` methods to get html (with javascript) and css to recreate the Chromium's t-rex runner game 
+- Fun: added `getTRexRunnerHtml` and `getTRexRunnerCss` methods to get html (with javascript) and css to recreate the Chromium's t-rex runner game
 
 ### BREAKING CHANGES
 - Deleted `WebResourceRequest` class
@@ -173,7 +176,7 @@ Breaking changes:
 
 - added support for **iOS** inline native WebView integrated in the flutter widget tree
 - updated example folder (thanks to [marquesinijatinha](https://github.com/marquesinijatinha))
-- Fixed bug where passing null to expiresDate failed (thanks to [Sense545](https://github.com/Sense545)) 
+- Fixed bug where passing null to expiresDate failed (thanks to [Sense545](https://github.com/Sense545))
 - Fixed iOS error: encode resourceURL (thanks to [igtm](https://github.com/igtm))
 - Fixed iOS error: Double value cannot be converted to Int because the result would be greater than Int.max in 32-bit devices (thanks to [huzhiren](https://github.com/huzhiren))
 - Fixed iOS error: problem in ChromeSafariBrowser (thanks to [marquesinijatinha](https://github.com/marquesinijatinha))

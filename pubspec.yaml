@@ -1,6 +1,6 @@
 name: flutter_polywebview
 description: A Flutter plugin that allows you to add an inline webview or open an in-app browser window.
-version: 4.0.0+2
+version: 4.0.1
 author: Lorenzo Pichilli <pichillilorenzo@gmail.com>
 homepage: https://github.com/pichillilorenzo/flutter_inappwebview
 
